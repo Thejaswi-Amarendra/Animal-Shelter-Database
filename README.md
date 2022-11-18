@@ -22,3 +22,8 @@ Create a database using the files in the SQL directory. To execute user interfac
 
 ![SS1](Others/ss1.png)
 ![SS2](Others/ss2.png)
+
+## Tasks to be done
+- [ ] Finish delete.py
+- [ ] Finish update.py
+- [ ] Add integrity constraints
