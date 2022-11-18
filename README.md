@@ -15,7 +15,9 @@ In database.py, enter your own password.
 ### Database
 Create a database using the files in the SQL directory. To execute user interface, execution of Database_creation.sql should suffice. 
 ## Entity-relationship diagram 
-![ER](Others/ER_Diagram.png)
+![ER](Others/ER%20diagram.png)
+## Relation schema
+![Relation](Others/Relation%20Schema.png)
 ## Snapshots of User Interface
 
 ![SS1](Others/ss1.png)
