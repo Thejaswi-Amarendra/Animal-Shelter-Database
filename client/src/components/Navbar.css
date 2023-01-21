@@ -1,0 +1,31 @@
+.navbar{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+
+    background: #691A2D;
+}
+
+.navbar-login {
+    position: absolute;
+width: 174px;
+height: 57px;
+left: 1124px;
+top: 23px;
+
+background: #91243E;
+border-radius: 15px;
+}
+
+.navbar-signup {
+    position: absolute;
+width: 174px;
+height: 57px;
+left: 1324px;
+top: 23px;
+
+background: #91243E;
+border-radius: 15px;
+}
