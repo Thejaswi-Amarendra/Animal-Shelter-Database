@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import {useState} from "react";
 import { useAuth } from "../../utils/auth";
 import Axios from "axios";
-
+ 
 function Login()
 {
     const [username, setUsername] = useState("");
@@ -46,7 +46,7 @@ function Login()
             <button onClick={Login}>Login</button>
             </form>
         </div>
-        <h1>{loginStatus}</h1>
+        <h1 style = {{color: "red"}}>{loginStatus}</h1>
         <button onClick={()=>navigate("/signup")}>Signup</button>
         <button onClick={()=>navigate("/")}>Home</button>
         </div>
