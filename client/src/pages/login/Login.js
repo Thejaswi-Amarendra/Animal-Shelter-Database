@@ -1,9 +1,14 @@
 import React from "react";
+
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
 import { useNavigate } from "react-router-dom";
 import {useState} from "react";
 import { useAuth } from "../../utils/auth";
 import Axios from "axios";
- 
+
+
 function Login()
 {
     const [username, setUsername] = useState("");
@@ -29,7 +34,8 @@ function Login()
                         setLoginStatus(response.data[0].username)
                         auth.login(response.data[0].username)
                         console.log(auth.user)
-                        navigate("/userprofile")
+                        
+                        navigate("/home")
                         
                     }
             }).catch((err)=>{console.log(err)});
@@ -37,18 +43,23 @@ function Login()
 
     
     return (
-        <div>
+        <div style={{
+            textAlign: "center", fontFamily: "Roboto, sans-serif"
+          }}><Button variant="outlined" onClick={()=>navigate("/signup")}>Signup</Button>
+        <Button variant="outlined" onClick={()=>navigate("/")}>Home</Button>
+        <br/><br/>
         <h1>Login</h1>
-        <div className="Login">
-            <form>
-            <input type = "text" onChange={(event)=>setUsername(event.target.value)} placeholder="Username" />
-            <input type = "password" onChange={(event)=>setPassword(event.target.value)} placeholder="Password" />
-            <button onClick={Login}>Login</button>
-            </form>
-        </div>
+        
+        <form>
+        <TextField type = "text" onChange={(event)=>setUsername(event.target.value)} label="Username" variant="outlined"/>
+        <br/><br/>
+        <TextField type = "password" onChange={(event)=>setPassword(event.target.value)} label="Password" variant="outlined"/>
+        <br/><br/>
+        <Button variant="contained" onClick={Login}>Login</Button>
+        </form>
+        
         <h1 style = {{color: "red"}}>{loginStatus}</h1>
-        <button onClick={()=>navigate("/signup")}>Signup</button>
-        <button onClick={()=>navigate("/")}>Home</button>
+        
         </div>
     );
 }

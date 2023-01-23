@@ -22,6 +22,7 @@ app.post('/signup', (req, res) => {
     db.query("INSERT INTO users (username, password) VALUES (?, ?)", [username, password], (err, result) => {
         if (err) {
             console.log(err);
+            res.send({ message: "Error while registering" })
         } else {
             console.log(result)
             res.send(result);
@@ -45,6 +46,20 @@ app.post('/login', (req, res) => {
         }
 });
 });
+
+app.get('/adopt', (req, res) => {
+    db.query("SELECT * FROM ANIMALS", (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(result)
+            res.send(result);
+        }
+    })
+    // res.send("Adopt")
+    // console.log("Adopt")
+}
+)
 
 app.listen(3001, () => {
     console.log("Server is running on port 3001");
